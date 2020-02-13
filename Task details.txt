@@ -1,0 +1,24 @@
+s.sh
+This file stores the information about the free and used space in memory, disk, and CPU every 1 minute .
+ For disk:
+The free and used space is divided between file system so I used the awk command to calculate 
+the summation of them and find the average by dividing the summation on the number of row in the table - 1.
+For CPU and memory: 
+Print just the average for free and used space .
+
+
+t.sh
+This file calculate every 1 minute  the average for all previous and present values of free and used space for CPU, disk, and memory.
+1-Find the number of line in the file.
+2-Calculate number of  table in the file
+.
+3-Summation for all average values in all tables. 
+
+4-Calculate the average for all average values
+.
+5-Print the result in files at path /var/www/html.
+
+
+index.html
+This file shows the links for disk, memory and CPU files so you can open them with the browser
+
