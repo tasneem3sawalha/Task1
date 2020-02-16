@@ -28,33 +28,33 @@ AVG3=$(echo $SUM2/$VAR |bc -l )
 AVG4=$(echo $SUM3/$VAR |bc -l )
 
 
-echo "***********************************************************" >> /var/www/html/mem
-echo "The avg for used in mem" >> /var/www/html/mem
-echo $AVG >> /var/www/html/mem
- date >> /var/www/html/mem
-uptime >>  /var/www/html/mem
+echo "***********************************************************" >> /var/www/html/mem.html
+echo "The avg for used in mem" >> /var/www/html/mem.html
+echo $AVG >> /var/www/html/mem.html
+ date >> /var/www/html/mem.html
+uptime >>  /var/www/html/mem.html
 
-echo "***********************************************************" >> /var/www/html/mem
-echo "The avg for free in mem" >> /var/www/html/mem
-echo $AVG2 >> /var/www/html/mem
- date >> /var/www/html/mem
-uptime >>  /var/www/html/mem
-
-
-echo "***********************************************************" >> /var/www/html/cpu
-
-echo "The avg for used in cpu" >> /var/www/html/cpu
-echo $AVG3 >> /var/www/html/cpu
- date >> /var/www/html/cpu
-uptime >>  /var/www/html/cpu
+echo "***********************************************************" >> /var/www/html/mem.html
+echo "The avg for free in mem" >> /var/www/html/mem.html
+echo $AVG2 >> /var/www/html/mem.html
+ date >> /var/www/html/mem.html
+uptime >>  /var/www/html/mem.html
 
 
+echo "***********************************************************" >> /var/www/html/cpu.html
 
-echo "***********************************************************" >> /var/www/html/cpu
-echo "The avg for free in cpu" >> /var/www/html/cpu
-echo $AVG4 >> /var/www/html/cpu
- date >> /var/www/html/cpu
-uptime >>  /var/www/html/cpu
+echo "The avg for used in cpu" >> /var/www/html/cpu.html
+echo $AVG3 >> /var/www/html/cpu.html
+ date >> /var/www/html/cpu.html
+uptime >>  /var/www/html/cpu.html
+
+
+
+echo "***********************************************************" >> /var/www/html/cpu.html
+echo "The avg for free in cpu" >> /var/www/html/cpu.html
+echo $AVG4 >> /var/www/html/cpu.html
+ date >> /var/www/html/cpu.html
+uptime >>  /var/www/html/cpu.html
 
 
 
@@ -72,12 +72,12 @@ done
 VAR=$(awk -v m=$C   'BEGIN { print (m / 15) }')
 AVG=$(echo $SUM/$VAR |bc -l )
 
-echo "***********************************************************" >> /var/www/html/disk
+echo "***********************************************************" >> /var/www/html/disk.html
 
-echo "The avg for used in disk" >> /var/www/html/disk
-echo $AVG >> /var/www/html/disk
- date >> /var/www/html/disk
-uptime >>  /var/www/html/disk
+echo "The avg for used in disk" >> /var/www/html/disk.html
+echo $AVG >> /var/www/html/disk.html
+ date >> /var/www/html/disk.html
+uptime >>  /var/www/html/disk.html
 
 
 
@@ -91,8 +91,16 @@ I=$((I+15))
 done
 VAR=$(awk -v m=$C   'BEGIN { print (m / 15) }')
 AVG=$(echo $SUM/$VAR |bc -l )
-echo "***********************************************************" >> /var/www/html/disk
- echo "The avg for free in disk" >> /var/www/html/disk
-echo $AVG >> /var/www/html/disk
- date >> /var/www/html/disk
-uptime >>  /var/www/html/disk
+echo "***********************************************************" >> /var/www/html/disk.html
+ echo "The avg for free in disk" >> /var/www/html/disk.html
+echo $AVG >> /var/www/html/disk.html
+ date >> /var/www/html/disk.html
+uptime >>  /var/www/html/disk.html
+
+
+cat /dev/null >disk
+cat /dev/null >cpu
+cat /dev/null >mem
+
+
+
