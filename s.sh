@@ -27,14 +27,25 @@ echo $AVG >> disk
 echo "The average of free space" >> disk
 echo $AVG2 >> disk
 echo "**********************************************************************************" >> disk
+echo "The average of free space" >> disk2
+echo $AVG2 >> disk2
+echo "**********************************************************************************" >> disk2
+
+
 echo "Memory" >> mem
 free -m |awk 'NR==1,NR==2 {print $2,$3 }' >> mem
 echo "***********************************************************" >>mem
+echo "Memory" >> mem2
+free -m |awk 'NR==1,NR==2 {print $2,$3 }' >> mem2
+echo "***********************************************************" >>mem2
 
 echo "CPU" >> cpu
  mpstat -P ALL|awk 'NR==3,NR==4 {print $4,$13 }' >>cpu
 echo "***********************************************************" >>cpu
 
+echo "CPU" >> cpu2
+ mpstat -P ALL|awk 'NR==3,NR==4 {print $4,$13 }' >>cpu2
+echo "***********************************************************" >>cpu2
 
 
 
